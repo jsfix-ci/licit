@@ -433,13 +433,14 @@ class Licit extends React.Component<any, any> {
       this.state.onReadyCB(this);
     }
 
-    if (this.state.debug) {
-      // import dynamically
-      import('prosemirror-dev-tools').then((prosemirrorDevTools) => {
-        window.debugProseMirror = () => {
-          prosemirrorDevTools.applyDevTools(editorView);
-        };
-        window.debugProseMirror();
+    if (this.state.debug && !this.devTools) {
+      this.devTools = new Promise(async (resolve) => {
+        // Method is exported as both the default and named, Using named
+        // for clarity and future proofing.
+        const { applyDevTools } = await import('prosemirror-dev-tools');
+        // Attach debug tools to current editor instance.
+        applyDevTools(editorView);
+        resolve(() => applyDevTools(editorView));
       });
     }
   };
@@ -448,9 +449,11 @@ class Licit extends React.Component<any, any> {
     // [FS] IRAD-1569 2021-09-15
     // Unmount dev tools when component is destroyed,
     // so that toggle effect is not occuring when the document is retrieved each time.
-    if (this.state.debug) {
-      // unmount dev
-      window.debugProseMirror();
+    if (this.devTools) {
+      // Call the applyDevTools method again to trigger DOM removal
+      // prosemirror-dev-tools has outstanding pull-requests that affect
+      // dom removal. this may need to be addressed once those have been merged.
+      this.devTools.then((removeDevTools) => removeDevTools());
     }
   }
 
