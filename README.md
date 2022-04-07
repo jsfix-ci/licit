@@ -59,7 +59,7 @@ Python(3.8.2)
 
 ### Install dependencies
 
- Build [licit-doc-attrs-step](https://github.com/MO-Movia/licit-doc-attrs-step) and copy _modusoperandi-licit-doc-attrs-step-0.0.1.tgz_ to the root folder.
+ Build [licit-utils](https://github.com/MO-Movia/licit-doc-attrs-step) and copy _modusoperandi-licit-utils-0.0.1.tgz_ to the root folder.
 ```
 cd licit
 npm install

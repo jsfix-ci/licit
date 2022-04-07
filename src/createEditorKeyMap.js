@@ -6,11 +6,11 @@ import { EditorView } from 'prosemirror-view';
 
 import * as EditorCommands from './EditorCommands';
 import * as EditorKeyMap from './EditorKeyMap';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 import type {
   UserKeyCommand,
   UserKeyMap,
-} from '@modusoperandi/licit-doc-attrs-step';
+} from '@modusoperandi/licit-utils';
 
 const {
   KEY_BACK_DELETE,

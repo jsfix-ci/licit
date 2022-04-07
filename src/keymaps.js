@@ -7,7 +7,7 @@ import browser from './browser';
 import {
   makeKeyMap,
   makeKeyMapWithCommon,
-} from '@modusoperandi/licit-doc-attrs-step';
+} from '@modusoperandi/licit-utils';
 
 // https://tinyurl.com/ybwf3wex
 

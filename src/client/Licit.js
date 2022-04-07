@@ -17,7 +17,7 @@ import type { EditorRuntime } from '../Types';
 import createPopUp from '../ui/createPopUp';
 import { atViewportCenter } from '../ui/PopUpPosition';
 import AlertInfo from '../ui/AlertInfo';
-import { SetDocAttrStep } from '@modusoperandi/licit-doc-attrs-step';
+import { SetDocAttrStep } from '@modusoperandi/licit-utils';
 import './licit.css';
 import DefaultEditorPlugins from '../buildEditorPlugins';
 import { Schema } from 'prosemirror-model';

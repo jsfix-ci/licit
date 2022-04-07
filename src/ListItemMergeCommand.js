@@ -10,7 +10,7 @@ import { EditorView } from 'prosemirror-view';
 
 import { HEADING, LIST_ITEM, PARAGRAPH } from './NodeNames';
 import nodeAt from './nodeAt';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 
 function mergeListItemUp(tr: Transform, schema: Schema): Transform {
   // This merge a list item to is previous list item of the selection is at the

@@ -8,7 +8,7 @@ import { Transform } from 'prosemirror-transform';
 import { EditorView } from 'prosemirror-view';
 
 import { PARAGRAPH, TABLE_CELL, TEXT } from './NodeNames';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 
 function isBlankParagraphNode(node: ?Node): boolean {
   if (!node) {

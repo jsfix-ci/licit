@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 import { EditorView } from 'prosemirror-view';
 import uuid from './uuid';
 import './listType.css';

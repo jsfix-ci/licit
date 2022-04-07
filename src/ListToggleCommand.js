@@ -8,7 +8,7 @@ import { EditorView } from 'prosemirror-view';
 import { BULLET_LIST, ORDERED_LIST, IMAGE } from './NodeNames';
 import noop from './noop';
 import toggleList from './toggleList';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 import isNodeSelectionForNodeType from './isNodeSelectionForNodeType';
 
 export class ListToggleCommand extends UICommand {

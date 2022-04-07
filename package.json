@@ -10,7 +10,7 @@
     "url": "git+https://github.com/MO-Movia/licit.git"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "build:bom": "cyclonedx-bom -o dist/bom.xml",
     "build:clean": "rm -rf dist/ && rm -f modusoperandi-licit-*.*.*.tgz",
     "build:css": "cp src/ui/*.css dist/ui && cp src/ui/mathquill-editor/*.css dist/ui/mathquill-editor && cp src/client/*.css dist/client && cp src/*.css dist",
@@ -88,7 +88,7 @@
     "write-file-webpack-plugin": "4.5.1"
   },
   "dependencies": {
-    "@modusoperandi/licit-doc-attrs-step": "^0.1.1",
+    "@modusoperandi/licit-utils": "git+https://github.com/MO-Movia/licit-doc-attrs-step.git#renamed-to-licit-utils",
     "body-parser": "^1.19.0",
     "browserkeymap": "2.0.2",
     "classnames": "2.2.6",

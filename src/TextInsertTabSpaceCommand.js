@@ -9,7 +9,7 @@ import { MARK_SPACER } from './MarkNames';
 import { HEADING, LIST_ITEM, PARAGRAPH } from './NodeNames';
 import { HAIR_SPACE_CHAR, SPACER_SIZE_TAB } from './SpacerMarkSpec';
 import applyMark from './applyMark';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 
 function insertTabSpace(
   state: EditorState,

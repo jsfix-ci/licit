@@ -8,7 +8,7 @@ import { EditorView } from 'prosemirror-view';
 
 import ColorEditor from './ui/ColorEditor';
 import { atAnchorRight } from './ui/PopUpPosition';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 import createPopUp from './ui/createPopUp';
 
 const setCellBackgroundBlack = setCellAttr('background', '#000000');

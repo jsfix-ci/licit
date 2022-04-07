@@ -9,7 +9,7 @@ import { Fragment } from 'prosemirror-model';
 import insertTable from './insertTable';
 import { atAnchorRight } from './ui/PopUpPosition';
 import TableGridSizeEditor from './ui/TableGridSizeEditor';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 import createPopUp from './ui/createPopUp';
 import { PARAGRAPH } from './NodeNames';
 import type { TableGridSizeEditorValue } from './ui/TableGridSizeEditor';

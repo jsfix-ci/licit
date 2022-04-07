@@ -8,7 +8,7 @@ import { EditorView } from 'prosemirror-view';
 import { CODE_BLOCK } from './NodeNames';
 import noop from './noop';
 import toggleCodeBlock from './toggleCodeBlock';
-import { UICommand } from '@modusoperandi/licit-doc-attrs-step';
+import { UICommand } from '@modusoperandi/licit-utils';
 
 class CodeBlockCommand extends UICommand {
   isActive = (state: EditorState): boolean => {
