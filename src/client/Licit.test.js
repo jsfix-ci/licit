@@ -96,3 +96,33 @@ describe('<Licit with HTML input/>', () => {
     expect(licit.state.editorState.doc.textContent).toBe(HELLO + WORLD);
   });
 });
+
+describe('<Licit with JSON input and HTML data type/>', () => {
+  let wrapper;
+  let licit;
+
+  const HELLO = 'Hello ';
+  const WORLD = 'World';
+
+  const data = {
+    type: 'doc',
+    content: [
+      {
+        type: 'paragraph',
+        content: [{ type: 'text', text: HELLO + WORLD }],
+      },
+    ],
+  };
+  beforeEach(() => {
+    wrapper = shallow(<Licit data={data} dataType={DataType.HTML} />);
+    licit = wrapper.instance();
+  });
+
+  it('should render a <RichTextEditor /> ', () => {
+    expect(wrapper.find(RichTextEditor)).toBeTruthy();
+  });
+
+  it('should match state text content with the passed in text ', () => {
+    expect(licit.state.editorState.doc.textContent).toBe(HELLO + WORLD);
+  });
+});

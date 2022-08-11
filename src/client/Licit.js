@@ -100,7 +100,7 @@ class Licit extends React.Component<any, any> {
       typeof props.onReady === 'function' ? props.onReady : noop;
     const readOnly = props.readOnly || false;
     let data = props.data || null;
-    const dataType = props.dataType || DataType.JSON;
+    let dataType = props.dataType || DataType.JSON;
     const disabled = props.disabled || false;
     const embedded = props.embedded || false; // [FS] IRAD-996 2020-06-30
     // [FS] 2020-07-03
@@ -110,6 +110,10 @@ class Licit extends React.Component<any, any> {
     // This flag decides whether DataType.HTML check is needed when
     // changing document. If it forcefully done, it is not needed, otherwise needed.
     this.skipDataTypeCheck = false;
+
+    const correct = this.getCorrectDataNType(dataType, data);
+    data = correct.data;
+    dataType = correct.dataType;
 
     this._defaultEditorSchema = new Schema({
       nodes: EditorNodes,
@@ -166,6 +170,31 @@ class Licit extends React.Component<any, any> {
       // Use known editorState to update schema.
       this._connector.updateSchema(editorState.schema, data);
     }
+  }
+
+  getCorrectDataNType(
+    dataType: DataType,
+    data: any
+  ): { data: any, dataType: DataType } {
+    const realDataType =
+      typeof data === 'object' ? DataType.JSON : DataType.HTML;
+    if (realDataType !== dataType) {
+      console.log('Expected ' + dataType.toString() + 'but passed in ' + realDataType.toString());
+
+      if (typeof data === 'string') {
+        try {
+          data = JSON.parse(data);
+          console.log(
+            'Looks like a valid JSON is passed' + dataType ===
+              DataType.innerHTML
+              ? ', but have mentioned HTML dataType'
+              : ''
+          );
+        } catch (ex) {}
+      }
+    }
+
+    return { data, dataType: realDataType };
   }
 
   initEditorState(plugins: Array<Plugin>, dataType: DataType, data: any) {
