@@ -127,7 +127,7 @@
     "resize-observer-polyfill": "1.5.1",
     "smooth-scroll-into-view-if-needed": "1.1.28",
     "style-loader": "^1.2.1",
-    "uuid": "8.2.0",
+    "uuid": "^9.0.0",
     "webfontloader": "1.6.28"
   },
   "importSort": {
